@@ -3,3 +3,4 @@
 -- Add any additional options here
 --
 vim.opt.nrformats:append("alpha")
+vim.opt.tabstop = 4
