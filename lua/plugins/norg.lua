@@ -28,8 +28,9 @@ local modules = {
   ["core.journal"] = {
     config = {
       strategy = "flat",
-      workspace = "Notes",
+      workspace = { "Notes", "English" },
     },
+
   },
   ["core.keybinds"] = {
     -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
@@ -42,7 +43,7 @@ local modules = {
     config = {
       workspaces = {
         Notes = "~/Alpha/Notes",
-        Work = "~/Alpha/Work",
+        English = "~/Alpha/English",
       }
     }
   },
