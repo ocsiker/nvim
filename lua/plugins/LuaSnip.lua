@@ -4,7 +4,6 @@ return {
   dependencies = {
     "rafamadriz/friendly-snippets",
     -- load snippets from path/of/your/nvim/config/my-cool-snippets
-    -- require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/Alpha/sourceCode/snippets/Jsnippets" } }),
     --make run from snippets
     "honza/vim-snippets",
     --make run from json vscode path with S paths
@@ -12,6 +11,7 @@ return {
     require("luasnip.loaders.from_snipmate").lazy_load({ paths = { "~/Alpha/sourceCode/snippets/Hsnippets" } }),
     --add file type
     require("luasnip").filetype_extend({ "uml" }, { "plantuml" }),
+    require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/Alpha/sourceCode/snippets/Jsnippets" } }),
     require("luasnip").filetype_extend({ "sql" }, { "mysql" }),
   },
   opts = {
