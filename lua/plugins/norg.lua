@@ -31,12 +31,16 @@ local modules = {
       strategy = "flat",
       workspace = { "Notes", "English" },
     },
+    workspaces = {
+      Notes = "~/Alpha/Notes",
+      English = "~/Alpha/English",
+    },
   },
+
   ["core.keybinds"] = {
     -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
     config = {
-      default_keybinds = true,
-      neorg_leader = "<Leader><Leader>",
+      default_keybinds = false,
     },
   },
   ["core.dirman"] = {
@@ -48,6 +52,7 @@ local modules = {
     },
   },
 }
+
 M.opts = {
   load = modules,
 }
