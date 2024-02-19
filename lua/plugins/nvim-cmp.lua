@@ -86,12 +86,14 @@ return {
         {
           name = "nvim_lsp",
           entry_filter = function(entry, ctx)
-                return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
-            end ,
-
+            return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+          end,
         },
         { name = "buffer" },
         { name = "path" },
+        {
+          name = "codeium",
+        },
       }),
       formatting = {
         format = function(_, item)
