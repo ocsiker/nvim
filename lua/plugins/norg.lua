@@ -5,26 +5,28 @@ local M = {
     {
       "<leader>cnwn",
       "<cmd> Neorg workspace Notes<cr>",
-      desc = "change workspaces Notes"
+      desc = "change workspaces Notes",
     },
     {
       "<leader>cnwe",
       "<cmd> Neorg workspace English<cr>",
-      desc = "change workspaces English"
+      desc = "change workspaces English",
     },
     {
       "<leader>ojt",
       "<cmd> Neorg journal today <cr>",
-      desc = "open journal today"
-    }, {
-    "<leader>ojc",
-    "<cmd> Neorg journal custom <cr>",
-    desc = "open journal custom"
-  }, {
-    "<leader>ojn",
-    "<cmd> Neorg journal tomorrow <cr>",
-    desc = "open journal tomorrow"
-  }
+      desc = "open journal today",
+    },
+    {
+      "<leader>ojc",
+      "<cmd> Neorg journal custom <cr>",
+      desc = "open journal custom",
+    },
+    {
+      "<leader>ojn",
+      "<cmd> Neorg journal tomorrow <cr>",
+      desc = "open journal tomorrow",
+    },
   },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
@@ -54,11 +56,10 @@ local modules = {
   ["core.journal"] = {
     config = {
       strategy = "flat",
-      workspace = { "Notes", "English" },
-    },
-    workspaces = {
-      Notes = "~/Alpha/Notes",
-      English = "~/Alpha/English",
+      workspaces = {
+        Notes = "~/Alpha/Notes",
+        English = "~/Alpha/English",
+      },
     },
   },
 
