@@ -1,6 +1,31 @@
 local M = {
   "nvim-neorg/neorg",
   ft = "norg",
+  keys = {
+    {
+      "<leader>cnwn",
+      "<cmd> Neorg workspace Notes<cr>",
+      desc = "change workspaces Notes"
+    },
+    {
+      "<leader>cnwe",
+      "<cmd> Neorg workspace English<cr>",
+      desc = "change workspaces English"
+    },
+    {
+      "<leader>ojt",
+      "<cmd> Neorg journal today <cr>",
+      desc = "open journal today"
+    }, {
+    "<leader>ojc",
+    "<cmd> Neorg journal custom <cr>",
+    desc = "open journal custom"
+  }, {
+    "<leader>ojn",
+    "<cmd> Neorg journal tomorrow <cr>",
+    desc = "open journal tomorrow"
+  }
+  },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -36,7 +61,7 @@ local modules = {
   ["core.keybinds"] = {
     -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
     config = {
-      default_keybinds = false,
+      default_keybinds = true,
     },
   },
   ["core.dirman"] = {
