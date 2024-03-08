@@ -1,7 +1,12 @@
+local wk = require("which-key")
 local M = {
   "nvim-neorg/neorg",
   ft = "norg",
   keys = {
+    wk.register({
+      ["<leader>oj"] = { name = "+norg journal" },
+      ["<leader>cn"] = { name = "+norg change workspace" },
+    }),
     {
       "<leader>cnwn",
       "<cmd> Neorg workspace Notes<cr>",
