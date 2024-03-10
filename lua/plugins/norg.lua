@@ -54,11 +54,10 @@ local modules = {
   ["core.journal"] = {
     config = {
       strategy = "flat",
-      workspace = { "Notes", "English" },
-    },
-    workspaces = {
-      Notes = "~/Alpha/Notes",
-      English = "~/Alpha/English",
+      workspaces = {
+        Notes = "~/Alpha/Notes",
+        English = "~/Alpha/English",
+      },
     },
   },
 
