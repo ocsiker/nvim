@@ -94,6 +94,9 @@ return {
         {
           name = "codeium",
         },
+        {
+          name = "emoji",
+        },
       }),
       formatting = {
         format = function(_, item)
