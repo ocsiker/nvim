@@ -8,11 +8,23 @@ end
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("Commentary_ft"),
   pattern = { "sql", "mysql" },
-  command = [[setlocal commentstring=--\ %s]]
+  command = [[setlocal commentstring=--\ %s]],
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
   group = augroup("sql_ft"),
   pattern = { "mysql" },
-  command = [[set filetype=sql]]
+  command = [[set filetype=sql]],
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
+  group = augroup("cobol_ft"),
+  pattern = { "cobol", "cbl" },
+  command = [[set filetype=cobol]],
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
+  group = augroup("bash_ft"),
+  pattern = { "sh", "bash" },
+  command = [[set filetype=sh]],
 })

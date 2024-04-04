@@ -4,6 +4,7 @@ return {
   build = ":TSUpdate",
   event = { "BufReadPost", "BufNewFile" },
   dependencies = {
+    { "yutaro-sakamoto/tree-sitter-cobol" },
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
       init = function()

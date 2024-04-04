@@ -1,7 +1,7 @@
 return {
   "allaman/emoji.nvim",
   version = "1.0.0", -- optionally pin to a tag
-  ft = { "markdown", "java" }, -- adjust to your needs
+  ft = { "markdown", "java", "norg" }, -- adjust to your needs
   dependencies = {
     -- optional for nvim-cmp integration
     "hrsh7th/nvim-cmp",
