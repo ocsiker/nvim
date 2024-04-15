@@ -17,6 +17,9 @@ return {
       "rebelot/kanagawa.nvim",
       "nvim-cmp",
       "nvim-lua/plenary.nvim",
+      "pysan3/pathlib.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-neotest/nvim-nio",
     },
     cmd = "Neorg",
     config = function()
