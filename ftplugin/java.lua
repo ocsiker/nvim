@@ -46,9 +46,9 @@ local root_dir = require("jdtls.setup").find_root(root_markers)
 
 -- calculate workspace dir
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = vim.fn.stdpath("data") .. "/site//workspace-root/" .. project_name
+-- local workspace_dir = vim.fn.stdpath("data") .. "/site//workspace-root/" .. project_name
 -- local workspace_dir = vim.env.HOME .. "/Alpha/Trash/" .. project_name
--- local workspace_dir = vim.env.HOME .. "/Alpha/sourceCode/java/introJava12th/" .. project_name
+local workspace_dir = "~/Alpha/sourceCode/java/" .. project_name
 if directory_exists(workspace_dir) then
 else
   os.execute("mkdir " .. workspace_dir)
