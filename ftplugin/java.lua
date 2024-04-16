@@ -1,9 +1,5 @@
 -- more space in the neovim command line for displaying messages
 -- use this function notation to build some variables
-vim.opt_local.shiftwidth = 4
-vim.opt_local.tabstop = 4
-vim.opt_local.softtabstop = 4
-vim.opt_local.ts = 4
 vim.opt_local.expandtab = true
 
 local status, jdtls = pcall(require, "jdtls")
@@ -17,9 +13,9 @@ local function capabilities()
     return cmp_nvim_lsp.default_capabilities()
   end
 
-  local CAPABILITIES = vim.lsp.protocol.make_client_capabilities()
-  CAPABILITIES.textDocument.completion.completionItem.snippetSupport = true
-  CAPABILITIES.textDocument.completion.completionItem.resolveSupport = {
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = {
       "documentation",
       "detail",
@@ -27,7 +23,7 @@ local function capabilities()
     },
   }
 
-  return CAPABILITIES
+  return capabilities
 end
 
 local function directory_exists(path)
@@ -46,9 +42,8 @@ local root_dir = require("jdtls.setup").find_root(root_markers)
 
 -- calculate workspace dir
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = vim.fn.stdpath("data") .. "/site//workspace-root/" .. project_name
--- local workspace_dir = vim.env.HOME .. "/Alpha/Trash/" .. project_name
--- local workspace_dir = vim.env.HOME .. "/Alpha/sourceCode/java/introJava12th/" .. project_name
+-- local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
+local workspace_dir = vim.env.HOME .. "/Alpha/Trash/" .. project_name
 if directory_exists(workspace_dir) then
 else
   os.execute("mkdir " .. workspace_dir)
@@ -57,14 +52,14 @@ end
 local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
 
 -- get the current OS
-local os
-if vim.fn.has("macunix") then
-  os = "mac"
-elseif vim.fn.has("win32") then
-  os = "win"
-else
-  os = "linux"
-end
+-- local os
+-- if vim.fn.has("macunix") then
+--   os = "mac"
+-- elseif vim.fn.has("win32") then
+--   os = "win"
+-- else
+--   os = "linux"
+-- end
 
 local bundles = {}
 local mason_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/")
@@ -95,7 +90,7 @@ local config = {
     "-jar",
     vim.fn.glob(install_path .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
     "-configuration",
-    install_path .. "/config_" .. os,
+    install_path .. "/config_" .. "linux",
     "-data",
     workspace_dir,
   },
@@ -106,6 +101,7 @@ local config = {
   },
 
   init_options = {
+
     bundles = {
       vim.fn.glob(
         mason_path .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar",
@@ -117,13 +113,6 @@ local config = {
 
 config["on_attach"] = function(client, bufnr)
   local _, _ = pcall(vim.lsp.codelens.refresh)
-
-  -- valdation if DAP not installed
-  local dap_status, _ = pcall(require, "nvim-dap")
-  if not dap_status then
-    return
-  end
-
   require("jdtls.dap").setup_dap_main_class_configs()
   jdtls.setup_dap({ hotcodereplace = "auto" })
   require("user.lsp.handlers").on_attach(client, bufnr)
