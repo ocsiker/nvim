@@ -1,4 +1,3 @@
 return {
-
-  "vim-scripts/DrawIt",
+  "ocsiker/DrawIt",
 }
