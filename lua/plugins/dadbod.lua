@@ -12,10 +12,11 @@ return {
     --     })
     --   end,
     -- },
-    config = function(_, opts)
+    config = function()
       -- vim.g.db_ui_save_location = vim.fn.stdpath("config") .. require("plenary.path").path.sep .. "db_ui"
       vim.g.db_ui_save_location = "~/Alpha/sourceCode/sql/"
       vim.g.db_ui_auto_execute_table_helpers = 1
+      vim.g.db_ui_use_nerd_fonts = 1
 
       -- local function bufferNameGenerator(opts)
       --   local time = os.date('%Y-%m-%d %H:%M:%S')
