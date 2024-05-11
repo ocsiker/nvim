@@ -4,3 +4,4 @@
 --
 -- vim.opt.nrformats:append("alpha")
 vim.opt.tabstop = 4
+vim.opt.foldmethod = "manual"
