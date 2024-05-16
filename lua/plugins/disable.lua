@@ -6,6 +6,7 @@ return {
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
   { "github/copilot.vim", enabled = false },
   { "allaman/emoji.nvim", enabled = false }, -- BUG: not compatible with nvim-cmp
+  { "3rd/image.nvim", enabled = false },
   -- { "vim-scripts/DrawIt", enabled = false },
   -- { "nvim-neotest/nvim-nio", enabled = false },
   -- { "tpope/vim-commentary",      enabled = false },
