@@ -156,7 +156,7 @@ vim.keymap.set('n', '<Leader>m', "<Cmd>lua require('maximize').toggle()<CR>")
 vim.keymap.set({ "n", "v" }, "s", "<nop", { noremap = true, desc = "Disable s keystroke" })
 vim.keymap.set("n", "sw", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
 vim.keymap.set({ "n", "v" }, "so", "<cmd>so<cr>", { noremap = true, desc = "Source file" })
-print("Ocsiker have just sourced")
+-- print("Ocsiker have just sourced")
 
 -- Unmap mappings used by tmux plugin
 -- TODO(vintharas): There's likely a better way to do this.

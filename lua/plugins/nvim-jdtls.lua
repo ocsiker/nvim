@@ -22,9 +22,9 @@ return {
       end
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+      -- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
       -- calculate workspace dir
-      local workspace_dir = vim.env.HOME .. "/Alpha/sourceCode/java/introJava12th/" .. project_name
+      -- local workspace_dir = vim.env.HOME .. "/Alpha/sourceCode/java/" .. project_name
       -- local workspace_dir = "/home/ocsiker/Alpha/sourceCode/java/" .. project_name
 
       -- get the current OS
